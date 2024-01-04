@@ -12,5 +12,9 @@ const buildTestCommand = (filenames) =>
   `npm run test -- --findRelatedTests ${filenames.join(' ')}`
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand, buildTestCommand],
+  '*.{js,jsx,ts,tsx}': [
+    buildEslintCommand,
+    buildPrettierCommand,
+    buildTestCommand
+  ]
 }
